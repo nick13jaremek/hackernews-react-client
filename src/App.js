@@ -28,8 +28,13 @@ class App extends Component {
     this.state = {
       list: list,
     };
-  }
 
+    this.onDismiss = this.onDismiss.bind(this);
+  }
+  
+  onDismiss(id) {
+    // TODO: implement logic
+  }
   render() {
     const helloWorld = 'Welcome to the Road to learn React';
     return (
@@ -43,6 +48,14 @@ class App extends Component {
               <span>{item.author}</span>
               <span>{item.num_comments}</span>
               <span>{item.points}</span>
+              <span>
+                <button
+                  onClick={() => this.onDismiss(item.objectID)}
+                  type="button"
+                >
+                  Dismiss
+                </button>
+              </span>
             </div>
           );
         })}
