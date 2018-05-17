@@ -26,7 +26,7 @@ class App extends Component {
     const helloWorld = 'Welcome to the Road to learn React';
     return (
       <div className="App">
-        {list.map(function(item) {
+        {list.map(item => {
           return (
             <div key={item.objectID}>
               <span>
