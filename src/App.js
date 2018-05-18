@@ -18,7 +18,7 @@ class App extends Component {
       result: null,
       searchTerm: DEFAULT_QUERY,
     };
-    
+
     this.setSearchTopStories = this.setSearchTopStories.bind(this);
     this.onDismiss = this.onDismiss.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -27,7 +27,7 @@ class App extends Component {
   setSearchTopStories(result) {
     this.setState({ result });
   }
-  
+
   componentDidMount() {
     const { searchTerm } = this.state;
 
@@ -52,8 +52,6 @@ class App extends Component {
 
   render() {
     const { searchTerm, result } = this.state;
-    
-    if (!result) { return null; }
 
     return (
       <div className="page">
@@ -65,11 +63,13 @@ class App extends Component {
             Search
           </Search>
         </div>
-        <Table
-          list={result.hits}
-          pattern={searchTerm}
-          onDismiss={this.onDismiss}
-        />
+        { result &&
+            <Table
+              list={result.hits}
+              pattern={searchTerm}
+              onDismiss={this.onDismiss}
+            />
+        }
       </div>
     );
   }
