@@ -2,12 +2,12 @@
 
 exports[`Search has a valid snapshot 1`] = `
 <form
-  onSubmit={undefined}
+  onSubmit={[Function]}
 >
   <input
-    onChange={undefined}
+    onChange={[Function]}
     type="text"
-    value={undefined}
+    value="test"
   />
   <button
     type="submit"
