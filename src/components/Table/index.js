@@ -45,6 +45,7 @@ const Table = ({ list, sortKey, isSortReverse, onSort, onDismiss }) => {
           <Sort
             sortKey={'AUTHOR'}
             onSort={onSort}
+            activeSortKey={sortKey}
           >
             Author
           </Sort>
@@ -53,6 +54,7 @@ const Table = ({ list, sortKey, isSortReverse, onSort, onDismiss }) => {
           <Sort
             sortKey={'COMMENTS'}
             onSort={onSort}
+            activeSortKey={sortKey}
           >
             Comments
           </Sort>
@@ -61,6 +63,7 @@ const Table = ({ list, sortKey, isSortReverse, onSort, onDismiss }) => {
           <Sort
             sortKey={'POINTS'}
             onSort={onSort}
+            activeSortKey={sortKey}
           >
             Points
           </Sort>
@@ -102,6 +105,8 @@ Table.propTypes = {
     })
   ).isRequired,
   onDismiss: PropTypes.func.isRequired,
+  sortKey: PropTypes.string.isRequired,
+  isSortReverse: PropTypes.bool.isRequired,
 };
 
 export default Table;

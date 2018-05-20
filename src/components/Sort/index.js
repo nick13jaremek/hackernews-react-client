@@ -1,13 +1,20 @@
 import React from 'react';
 import Button from '../Button';
+import classNames from 'classnames';
 
-const Sort = ({ sortKey, onSort, children }) => 
-  <Button 
+const Sort = ({ sortKey, onSort, activeSortKey, children }) => {
+  const sortClass = classNames(
+    'button-inline',
+    { 'button-active': sortKey === activeSortKey }
+  );
+
+  return <Button 
     onClick={() => onSort(sortKey)}
-    className="button-inline"
+    className={sortClass}
   >
     {children}
   </Button>
+};
 
 export default Sort;
 
