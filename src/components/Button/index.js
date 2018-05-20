@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ onClick, className = '', children }) => {
+const Button = ({ onClick, className, children }) => {
   return(
     <button
       onClick={onClick}
@@ -12,6 +12,10 @@ const Button = ({ onClick, className = '', children }) => {
     </button>
   );
 }
+
+Button.defaultProps = {
+  className: '',
+};
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
