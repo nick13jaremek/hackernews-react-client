@@ -1,3 +1,17 @@
+# Simple Hackernews search client
+
+This is a simple implementation of a React client that allows searching Hackernews posts based on a search query. The code is mostly based on [Robin Wieruch's](https://www.robinwieruch.de/about/) [*Road to React* course](https://roadtoreact.com/).
+
+The client targets an external Hackernews API to fetch the search results.
+
+Some implementation features:
+
+- Search Hackernews entries.
+- Sorting of results based on: author, number of comments, post points and post title.
+- Client side caching: search results are stored on the client to avoid repetitive search requests.
+- Unit tests using `enzyme`and `jest` React libraries.
+
+# Bootstrap process
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
