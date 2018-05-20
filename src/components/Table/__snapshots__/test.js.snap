@@ -195,5 +195,6 @@ exports[`Table has a valid snapshot 1`] = `
       </button>
     </span>
   </div>
+  ;
 </div>
 `;
