@@ -8,22 +8,26 @@ import Button from './index.js';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Button', () => {
+  const props = {
+    onDismiss: () => true,
+  };
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Button>Give Me More</Button>, div);
+    ReactDOM.render(<Button { ...props }>Give Me More</Button>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   test('has a valid snapshot', () => {
     const component = renderer.create(
-      <Button>Give Me More</Button>
+      <Button { ...props }>Give Me More</Button>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('should contain the correct child label', () => {
     const element = shallow(
-      <Button>Give Me More</Button>
+      <Button { ...props }>Give Me More</Button>
     );
 
     expect(element.contains('Give Me More')).toEqual(true);
