@@ -10,6 +10,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Button', () => {
   const props = {
     onDismiss: () => true,
+    onClick: () => true,
   };
 
   it('renders without crashing', () => {
